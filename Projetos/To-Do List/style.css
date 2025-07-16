@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(66, 66, 223);
+    font: normal 18px arial;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.p{
+    text-align: center;
+    font: normal 13px arial;
+    font-style: italic;
+}
+
+section{
+    padding: 20px;
+    width: 500px;
+    background-color: azure;
+    margin: auto;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+    
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    
+}
+
+div{
+    text-align: center;
+    padding: 8px;
+}
