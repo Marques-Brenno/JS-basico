@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>005</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body{
+            background-color: rgb(66, 66, 223);
+            font: normal 20px arial;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+        #area{
+            padding: 20px;
+            width: 500px;
+            height: 200px;
+            background-color: azure;
+            margin: auto;
+            border-radius: 15px;
+            color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var a = document.getElementById('area')
+        
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() 
+        {
+            a.innerHTML = 'Clicou'   
+            a.style.background = 'red' 
+        }
+
+        function entrar()
+        {
+            a.style.background = 'violet'
+            a.innerText = 'Entrou'
+        }
+
+        function sair()
+        {
+            a.innerText = 'Saiu'
+            a.style.background = 'white'
+        }
+    </script>
+</body>
+</html>

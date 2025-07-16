@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>004</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body{
+            background-color: rgb(66, 66, 223);
+            font: normal 20px arial;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        section{
+            padding: 20px;
+            width: 500px;
+            background-color: azure;
+            margin: auto;
+            border-radius: 15px;
+            color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>iniciando estudos DOM</h1>
+        <p id="p1">aqui vai o resultado</p>
+        <p id="p2">aprendendo <strong>DOM</strong> em JavaScript</p>
+    </section>
+
+    <script>
+        var p = document.getElementById('p2')
+        document.write(p.innerHTML)
+    </script>
+</body>
+</html>

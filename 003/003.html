@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>003</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            background-color: rgb(66, 66, 223);
+            font: normal 20px arial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        p{
+            width: 100%;
+        }
+
+        section{
+            padding: 20px;
+            width: 500px;
+            background-color: azure;
+            margin: auto;
+            border-radius: 15px;
+            color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="section">
+        <p class="p"></p>
+        <p class="p"></p>
+        <p class="p"></p>
+    </section>
+    
+    <script>
+        var nome = prompt('Qual seu nome?');
+        var section = document.querySelector("#section")
+        var p = document.querySelectorAll(".p")
+        p[0].innerHTML = `Seu nome tem ${nome.length} letras`
+        p[1].innerHTML = `Seu nome em maiusculo ${nome.toUpperCase()}`;
+        p[2].innerHTML = `Seu nome em minusculo ${nome.toLowerCase()}`
+    
+    </script>
+</body>
+</html>
