@@ -102,15 +102,19 @@ function adicionar(){
 
         containerAlert.appendChild(divAlert);
         divAlert.appendChild(div);
-        div.appendChild(alertIcon)
-        alertIcon.appendChild(alertCircle)
-        alertCircle.appendChild(icon)
-        div.appendChild(alertText)
-        divAlert.appendChild(alertTime)
+        div.appendChild(alertIcon);
+        alertIcon.appendChild(alertCircle);
+        alertCircle.appendChild(icon);
+        div.appendChild(alertText);
+        divAlert.appendChild(alertTime);
         
         setTimeout(function(){
-            divAlert.style.animation = "forwards .5s diminui"
+            divAlert.style.animation = "forwards .5s diminui";
         },4500);
+
+        setTimeout(function(){
+            divAlert.remove();
+        },5000);
 
     }
 }
