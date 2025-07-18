@@ -10,18 +10,6 @@
 </head>
 <body>
     <div id="container-alert">
-        <!-- <div class="alert animation-diminui">
-            <div>
-                <div class="alert-icon">
-                    <div class="alert-circle">
-                        <i class="fa-solid fa-exclamation"></i>
-                    </div>
-                </div>
-                <div class="alert-text">Você não pode adicionar uma tarefa vazia</div>
-            </div>
-            <div class="alert-time animation-time"></div>
-        </div> -->
-        
     </div>
     <section>
         <h1>To-Do List</h1>
@@ -34,7 +22,25 @@
         </div>
         <div id="content-task">
         </div>
+        <div class="detalhes">
+            <button id="ver-detalhes">Detalhes</button>
+        </div>
     </section>
+
+    <div class="disabled" id="modal">
+        <div class="container-details">
+            <div class="details-header">
+                <h1>Resumo das tarefas</h1>
+                <button id="close">&times;</button>
+            </div>
+            <div class="body-details">
+                <p id="completed-text"></p>
+                <div id="content-task-completed">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src='script.js'></script>
 
 </body>

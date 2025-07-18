@@ -43,7 +43,7 @@ section{
 
 h1{
     text-align: center;
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .content{
@@ -70,6 +70,7 @@ margin-bottom: 20px;
     border-radius: 10px;
     width: 100%;
     z-index: 2;
+    font-size: .9em;
 }
 
 .div-add-task > label{
@@ -128,7 +129,7 @@ margin-bottom: 20px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 30px;
+    height: 50px;
 }
 
 .input-task{
@@ -138,6 +139,7 @@ margin-bottom: 20px;
     border: 1px solid rgba(128, 128, 128, 0.458);
     outline: none;
     border-radius: 10px;
+    font-size: .8em
 }
 
 .butons{
@@ -200,7 +202,7 @@ margin-bottom: 20px;
 }
 
 .check:hover ~ .input-task{
-    border: 1px solid var(--azul);
+    border: 2px solid var(--azul);
 }
 
 input[type="checkbox"]:checked + .check{
@@ -227,12 +229,20 @@ input[type="checkbox"]:checked ~ .risco{
 }
 
 input[type="checkbox"]:checked ~ .input-task{
-    border: 1px solid var(--azul);
+    border: 2px solid var(--azul);
 }
 
 input[type="checkbox"]:checked ~ .butons > .edt{
     pointer-events: none;
     opacity: .5;
+}
+
+.hover{
+    border: 2px solid var(--azul);
+}
+
+.normal{
+    border: 1px solid rgba(128, 128, 128, 0.458);
 }
 
 #container-alert{
@@ -315,6 +325,101 @@ input[type="checkbox"]:checked ~ .butons > .edt{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     animation: time 5s;
+}
+
+.detalhes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#ver-detalhes{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+#ver-detalhes:hover{
+    cursor: pointer;
+    background-color: rgb(52, 52, 167);
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.disabled{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container-details{
+    background-color: var(--branco);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+    width: 40%;
+    position: absolute;
+    z-index: 100;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.details-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.details-header > h1{
+    color: #2c3e50;
+
+}
+
+#close{
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #777;
+
+}
+
+.body-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#completed-text{
+    color: #777;
+    margin-top: 10px;
+}
+
+.task-completed{
+    color: #777;
+    border: 2px solid var(--azul);
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
 

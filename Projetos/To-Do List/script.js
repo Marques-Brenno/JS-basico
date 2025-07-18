@@ -3,6 +3,11 @@ let newTask = document.querySelector("#new-task");
 let contentTask = document.querySelector("#content-task");
 ct = 0;
 let containerAlert = document.querySelector("#container-alert");
+let details = document.querySelector("#ver-detalhes");
+let modal = document.querySelector("#modal");
+let buttonClose = document.querySelector("#close");
+let completedText = document.querySelector("#completed-text");
+let contentTaskCompleted = document.querySelector("#content-task-completed");
 
 function adicionar(){
     if(newTask.value.trim().replace(/\s+/g, ' ') != ""){
@@ -52,14 +57,16 @@ function adicionar(){
         buttonEdt.addEventListener("click", function(){
             if(buttonEdt.classList.contains("edt")){
                 inputText.disabled = false;
-                inputText.style.border = "2px solid rgb(66, 66, 223)";
+                inputText.classList.remove('normal')
+                inputText.classList.add('hover');
                 buttonEdt.classList.remove('edt');
                 buttonEdt.classList.add('save');
                 buttonEdt.textContent = "Salvar";
             }
             else{
                 inputText.disabled = true;
-                inputText.style.border = "1px solid rgba(128, 128, 128, 0.458)";
+                inputText.classList.remove('hover')
+                inputText.classList.add('normal');
                 buttonEdt.classList.remove('save');
                 buttonEdt.classList.add('edt');
                 buttonEdt.textContent = "Editar";
@@ -119,4 +126,40 @@ function adicionar(){
     }
 }
 
+function showTaskCompleted(){
+    let inputTask = querySelectorAll(".input-task");
+    completedTask.forEach(e,index => {
+        let taskCompleted = document.createElement("div");
+        taskCompleted.textContent = inputTask[index].value;
+        contentTaskCompleted.appendChild(taskCompleted)
+    });
+}
+
+function detalhes(){
+    let completedTask = document.querySelectorAll('input[type="checkbox"]:checked')
+    let totalTask = document.querySelectorAll('input[type="checkbox"]').length
+    modal.classList.remove("disabled");
+    modal.classList.add("active");
+
+    if(completedTask.length == 0){
+        completedText.textContent = `Você ainda não completou nenhuma tarefa`;
+    }
+    else if(completedTask.length == 1){
+        completedText.textContent = `Você completou ${completedTask.length} tarefa de ${totalTask}`;
+        showTaskCompleted()
+    }
+    else{
+        completedText.textContent = `Você completou ${completedTask.length} tarefas de ${totalTask}`;
+        showTaskCompleted()
+    }
+}
+
+function closeDetails(){
+    modal.classList.add("disabled");
+    modal.classList.remove("active");
+}
+
 add.addEventListener("click", adicionar);
+
+details.addEventListener("click", detalhes);
+buttonClose.addEventListener("click", closeDetails);
