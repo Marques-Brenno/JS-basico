@@ -1,3 +1,9 @@
+:root{
+    --azul: rgb(66, 66, 223);
+    --branco: azure;
+    --vermelho: rgb(255, 82, 82);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -5,7 +11,7 @@
 }
 
 body{
-    background-color: rgb(66, 66, 223);
+    background-color: var(--azul);
     font: normal 18px arial;
     color: white;
     display: flex;
@@ -13,6 +19,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
 }
 
 .p{
@@ -23,22 +30,317 @@ body{
 
 section{
     padding: 20px;
-    width: 500px;
-    background-color: azure;
+    width: 40vw;
+    background-color: var(--branco);
     margin: auto;
     border-radius: 15px;
     color: black;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
-    
+    height: auto;
     align-items: center;
 }
 
 h1{
     text-align: center;
+margin-bottom: 20px;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-add-task{
+    position: relative;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    width: 70%;
+    height: 55px;
+}
+
+#new-task{
+    position: absolute;
+    background-color: transparent;
+    padding: 15px 5px 15px 5px;
+    border: 1px solid rgba(128, 128, 128, 0.458);
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    z-index: 2;
+}
+
+.div-add-task > label{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 5px;
+    transition: .5s;
+}
+
+
+#new-task:focus + label,
+#new-task:valid + label{
+    transform: translateX(10px) translateY(-14px);
+    transition: .5s;
+    /* font-size: .9em; */
+    background-color: var(--branco);
+    padding: 0 5px;
+    width: auto;
+    height: auto;
+    z-index: 3;
+}
+
+#new-task:focus,
+#new-task:valid{
+    border: 1px solid var(--azul);
+}
+
+#add{
+    height: 50px;
+    width: 27%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--azul);
+    color: var(--branco)
+}
+
+#add:hover{
+    cursor: pointer;
+    background-color: rgb(52, 52, 167);
+    /* box-shadow: 5px 5px 10px rgb(91, 91, 255); */
     
 }
 
-div{
-    text-align: center;
-    padding: 8px;
+#content-task{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+
+.input-task{
+    width: 62%;
+    background-color: transparent;
+    padding: 15px 5px 15px 5px;
+    border: 1px solid rgba(128, 128, 128, 0.458);
+    outline: none;
+    border-radius: 10px;
+}
+
+.butons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 27%;
+    /* margin-left: 10px; */
+}
+
+.btn{
+    height: 50px;
+    width: 45%;
+    border: none;
+    border-radius: 10px;
+    color: var(--branco);
+}
+
+.edt{
+    background-color: rgb(110, 110, 254);
+}
+
+.edt:hover{
+    background-color: rgb(91, 91, 255);
+    cursor: pointer;
+}
+
+.exc{
+    background-color: var(--vermelho);
+}
+
+.exc:hover{
+    background-color: rgb(252, 44, 44);
+    cursor: pointer;
+}
+
+.save{
+    background-color: rgb(86, 255, 86);
+}
+
+.save:hover{
+    background-color: rgb(60, 214, 60);
+    cursor: pointer;
+}
+
+.check{
+    border: 1px solid rgb(110, 110, 254);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check:hover{
+    cursor: pointer;
+    scale: 1.2;
+}
+
+.check:hover ~ .input-task{
+    border: 1px solid var(--azul);
+}
+
+input[type="checkbox"]:checked + .check{
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+input[type="checkbox"]:checked + .check::after{
+    content: "✔";
+}
+
+.risco{
+    position: absolute;
+    display: none;
+    border: none;
+    background-color: var(--azul);
+    height: 2px;
+    width: 22%;
+    transform: translateX(16%) translateY(0px);
+}
+
+input[type="checkbox"]:checked ~ .risco{
+    display: inline;
+}
+
+input[type="checkbox"]:checked ~ .input-task{
+    border: 1px solid var(--azul);
+}
+
+input[type="checkbox"]:checked ~ .butons > .edt{
+    pointer-events: none;
+    opacity: .5;
+}
+
+#container-alert{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 26%;
+    bottom: 10px;
+    left: -25%;
+    /* background-color: antiquewhite; */
+}
+
+.alert{
+    background-color: rgb(35, 37, 49);
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: last baseline;
+    border: 1px solid var(--branco);
+    animation: surge .5s;
+
+}
+
+.alert > div:not(.alert-time){
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+.alert-icon{
+    background-color: rgba(255, 255, 255, 0.05);
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 10px;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.alert-circle{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+.alert-circle > i{
+    color: red;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-text{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.alert-time{
+    background-color: var(--branco);
+    height: 5px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation: time 5s;
+}
+
+
+@keyframes surge {
+  from{
+    margin-left: -20px;
+  }
+  to{
+    margin-left: 100%;
+    }
+}
+
+@keyframes diminui {
+  from{
+    margin-left: 100%;
+  }
+  to{
+    margin-left: -20px;
+    }
+}
+
+@keyframes time {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
