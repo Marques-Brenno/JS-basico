@@ -5,42 +5,62 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>To-Do List</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Estilo principal da aplicação -->
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+    <!-- Ícones da Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div id="container-alert">
-    </div>
+
+    <!-- Área para mensagens de alerta -->
+    <div id="container-alert"></div>
+
     <section>
         <h1>To-Do List</h1>
+
+        <!-- Entrada de nova tarefa -->
         <div class="content">
             <div class="div-add-task">
                 <input type="text" id="new-task" name="new-task" value="" required>
                 <label for="new-task">Adicionar tarefa</label>
             </div>
+
+            <!-- Botão para adicionar tarefa -->
             <button id="add">Adicionar</button>
         </div>
-        <div id="content-task">
-        </div>
+
+        <!-- Tarefas inseridas aparecem aqui -->
+        <div id="content-task"></div>
+
+        <!-- Abre o modal de detalhes -->
         <div class="detalhes">
             <button id="ver-detalhes">Detalhes</button>
         </div>
     </section>
 
+    <!-- Modal com resumo das tarefas concluídas -->
     <div class="disabled" id="modal">
         <div class="container-details">
             <div class="details-header">
                 <h1>Resumo das tarefas</h1>
+
+                <!-- Botão para fechar o modal -->
                 <button id="close">&times;</button>
             </div>
+
             <div class="body-details">
+                <!-- Quantidade de tarefas concluídas -->
                 <p id="completed-text"></p>
-                <div id="content-task-completed">
-                </div>
+
+                <!-- Lista de tarefas concluídas -->
+                <div id="content-task-completed"></div>
             </div>
         </div>
     </div>
 
+    <!-- Script com a lógica da aplicação -->
     <script src='script.js'></script>
 
 </body>
