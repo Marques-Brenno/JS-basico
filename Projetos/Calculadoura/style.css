@@ -50,6 +50,7 @@ section{
     border: 1px solid var(--light);
     border-radius: 10px 10px 0 0;
     padding: 0 10px;
+    overflow: hidden;
 }
 
 .buttons{
@@ -84,7 +85,7 @@ button:hover{
 
 }
 
-.bt-black{
+.black{
     background-color: var(--dark);
 }
 
@@ -92,15 +93,15 @@ button:hover{
     border-radius: 0 0 0 10px;
 }
 
-.bt-purple{
+.purple{
     background-color: var(--secondary);
 }
 
-.bt-blue{
+.blue{
     background-color: var(--primary);
 }
 
-.bt-pink{
+.pink{
     background-color: var(--accent);
     grid-column: span 2;
     border-radius: 0 0 10px 0;
