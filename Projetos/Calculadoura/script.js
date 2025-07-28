@@ -1,5 +1,5 @@
 let resul = document.querySelector("#res");
-let buttons = document.querySelector(".buttons");
+let buttons = document.querySelectorAll(".btn");
 let Firstnum = null;
 let Newnum = null;
 let operador = null;
@@ -77,11 +77,12 @@ function calcular() {
     Firstnum = null;
 }
 
-buttons.addEventListener("click", function(event) {
-    if (/^[0-9,]+$/.test(event.target.textContent)) {
-            add(event.target.textContent);
+buttons.forEach(element => {
+    element.addEventListener("click", function () {
+        if (/^[0-9,]+$/.test(element.textContent)) {
+            add(element.textContent);
         } else {
-            switch (event.target.textContent) {
+            switch (element.textContent) {
                 case "C":
                     apaga();
                     break;
@@ -95,16 +96,80 @@ buttons.addEventListener("click", function(event) {
                     sinal();
                     break;
                 case ",":
-                    add(event.target.textContent);
+                    add(element.textContent);
                     break;
                 case "÷":
                 case "×":
                 case "-":
                 case "+":
-                    ADDoperador(event.target.textContent);
+                    ADDoperador(element.textContent);
                     break;
                 default:
             }
         }
+    });
 });
+
+buttons.addEventListener("click", function(){
+    if (/^[0-9,]+$/.test(this.textContent)) {
+        add(this.textContent);
+    } else {
+        switch (this.textContent) {
+            case "C":
+                apaga();
+                break;
+            case "%":
+                porcent();
+                break;
+            case "=":
+                calcular();
+                break;
+            case "±":
+                sinal();
+                break;
+            case ",":
+                add(this.textContent);
+                break;
+            case "÷":
+            case "×":
+            case "-":
+            case "+":
+                ADDoperador(this.textContent);
+                break;
+            default:
+        }
+    }
+});
+
+
+// buttons.addEventListener("click", function(event) {
+//     if (/^[0-9,]+$/.test(event.target.textContent)) {
+//             add(event.target.textContent);
+//         } else {
+//             switch (event.target.textContent) {
+//                 case "C":
+//                     apaga();
+//                     break;
+//                 case "%":
+//                     porcent();
+//                     break;
+//                 case "=":
+//                     calcular();
+//                     break;
+//                 case "±":
+//                     sinal();
+//                     break;
+//                 case ",":
+//                     add(event.target.textContent);
+//                     break;
+//                 case "÷":
+//                 case "×":
+//                 case "-":
+//                 case "+":
+//                     ADDoperador(event.target.textContent);
+//                     break;
+//                 default:
+//             }
+//         }
+// });
 
