@@ -1,5 +1,5 @@
 let resul = document.querySelector("#res");
-let buttons = document.querySelectorAll(".btn");
+let buttons = document.querySelector(".buttons");
 let Firstnum = null;
 let Newnum = null;
 let operador = null;
@@ -77,12 +77,44 @@ function calcular() {
     Firstnum = null;
 }
 
-buttons.forEach(element => {
-    element.addEventListener("click", function () {
-        if (/^[0-9,]+$/.test(element.textContent)) {
-            add(element.textContent);
+// buttons.forEach(element => {
+//     element.addEventListener("click", function () {
+//         if (/^[0-9,]+$/.test(element.textContent)) {
+//             add(element.textContent);
+//         } else {
+//             switch (element.textContent) {
+//                 case "C":
+//                     apaga();
+//                     break;
+//                 case "%":
+//                     porcent();
+//                     break;
+//                 case "=":
+//                     calcular();
+//                     break;
+//                 case "±":
+//                     sinal();
+//                     break;
+//                 case ",":
+//                     add(element.textContent);
+//                     break;
+//                 case "÷":
+//                 case "×":
+//                 case "-":
+//                 case "+":
+//                     ADDoperador(element.textContent);
+//                     break;
+//                 default:
+//             }
+//         }
+//     });
+// });
+
+buttons.addEventListener("click", function(event) {
+    if (/^[0-9,]+$/.test(event.target.textContent)) {
+            add(event.target.textContent);
         } else {
-            switch (element.textContent) {
+            switch (event.target.textContent) {
                 case "C":
                     apaga();
                     break;
@@ -96,16 +128,16 @@ buttons.forEach(element => {
                     sinal();
                     break;
                 case ",":
-                    add(element.textContent);
+                    add(event.target.textContent);
                     break;
                 case "÷":
                 case "×":
                 case "-":
                 case "+":
-                    ADDoperador(element.textContent);
+                    ADDoperador(event.target.textContent);
                     break;
                 default:
             }
         }
-    });
 });
+
