@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section>
+        <h1>Cadastro</h1>
+        <div class="inputs">
+            <div class="content-input">
+                <input type="text" id="nome" name="nome" class="input" required>
+                <label for="nome">Nome</label>
+            </div>
+            <div class="content-input">
+                <input type="text" id="email" name="email" class="input" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="content-input">
+                <input type="password" id="senha" name="senha" class="input" required>
+                <label for="senha">Senha</label>
+                <!-- <i class='bxr bx-eye-closed'></i>  -->
+                <i class='bxr bx-eye-big' id="view"></i> 
+            </div>
+            <div class="password">
+                <div class="password-bar">
+                    <div id="password-nivel">
+                    </div>
+                </div>
+                <div id="password-text"></div>
+            </div>
+
+        </div>
+
+        <div class="button"><button id="cadastrar" class="off" disabled type="submit">Cadastrar</button></div>
+    </section>
+    
+    <script src='script.js' defer></script>
+
+</body>
+</html>

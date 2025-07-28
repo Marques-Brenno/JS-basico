@@ -1,0 +1,175 @@
+:root{
+    /* Definindo variáveis de cores para uso em todo o CSS */
+    --azul: rgb(66, 66, 223);
+    --branco: azure;
+    --vermelho: rgb(255, 82, 82);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(66, 66, 223);
+    font: normal 18px arial;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+section{
+    padding: 20px;
+    width: 500px;
+    background-color: azure;
+    margin: auto;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+.content-input{
+    /* Estilizando a div para adicionar tarefas */
+    position: relative; /* Para posicionamento absoluto de elementos filhos */
+    height: auto; /* Altura automática */
+    margin-top: 10px; /* Margem superior */
+    display: flex; /* Usando flexbox */
+    width: 100%; /* Largura de 70% */
+    height: 55px; /* Altura fixa */
+}
+
+.input{
+    /* Estilizando o campo de entrada para nova tarefa */
+    position: absolute; /* Posicionamento absoluto */
+    background-color: transparent; /* Fundo transparente */
+    padding: 15px 5px; /* Padding interno */
+    border: 1px solid rgba(128, 128, 128, 0.458); /* Borda com cor semi-transparente */
+    outline: none; /* Removendo contorno padrão */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 100%; /* Largura total */
+    z-index: 2; /* Para sobreposição */
+    font-size: .9em; /* Tamanho da fonte */
+}
+
+.content-input > label{
+    /* Estilizando o rótulo associado ao campo de entrada */
+    position: absolute; /* Posicionamento absoluto */
+    display: flex; /* Usando flexbox */
+    align-items: center; /* Alinhando itens verticalmente */
+    height: 50px; /* Altura fixa */
+    padding-left: 5px; /* Padding à esquerda */
+    transition: .5s; /* Transição suave */
+}
+
+/* Estilos para o rótulo quando o campo de entrada está focado ou válido */
+.input:focus + label,
+.input:valid + label{
+    transform: translateX(10px) translateY(-14px); /* Movendo o rótulo */
+    transition: .5s; /* Transição suave */
+    background-color: var(--branco); /* Fundo branco */
+    padding: 0 5px; /* Padding interno */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+    z-index: 3; /* Para sobreposição */
+}
+
+/* Estilos para o campo de entrada quando está focado ou válido */
+.input:focus,
+.input:valid{
+    border: 1px solid var(--azul); /* Borda azul */
+}
+
+.bxr{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    font-size: 30px;
+}
+
+.bxr:hover{
+    cursor: pointer;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#cadastrar{
+    /* Estilizando o botão de adicionar tarefa */
+    height: 50px; /* Altura fixa */
+    width: 50%; /* Largura de 27% */
+    border: none; /* Sem borda */
+    padding: 10px; /* Padding interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    color: var(--branco); /* Cor do texto branca */
+    font-size: 20px;
+}
+
+#cadastrar.on {
+  background-color: var(--azul);
+  cursor: pointer;
+}
+
+#cadastrar.off {
+  background-color: var(--vermelho);
+  cursor: not-allowed;
+}
+
+#cadastrar.on:hover {
+  background-color: rgb(52, 52, 167);
+}
+
+#cadastrar.off:hover {
+  background-color: rgb(252, 44, 44);
+}
+
+
+.password{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.password-bar{
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+
+#password-nivel{
+    width: 0;
+    height: 100%;
+    /* background-color: var(--vermelho); */
+    transition: width .5s ease, background-color .5s ease;
+}
+
+#password-text{
+    color: #666;
+    font-size: .8rem;
+    
+}

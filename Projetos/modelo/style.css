@@ -8,6 +8,11 @@ body{
     background-color: rgb(66, 66, 223);
     font: normal 18px arial;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .p{
