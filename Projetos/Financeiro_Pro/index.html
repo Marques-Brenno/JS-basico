@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Financeiro Pro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script type="module" src="./js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="title-header">
+            <i class="ph ph-wallet"></i>
+            <h1>Financeiro Pro</h1>
+        </div>
+        <div class="dollar">
+            <span>USD: <strong id="dolar-valor">...</strong></span>
+        </div>
+    </header>
+    <section id="dashboard">
+        <div class="card entrada">
+            <div class="card-header">
+                <span>Entradas</span>
+                <i class="ph ph-arrow-circle-up"></i>
+            </div>
+            <h3 id="display-entradas">0,00</h3>
+
+        </div>
+
+        <div class="card saida">
+            <div class="card-header">
+                <span>Saidas</span>
+                <i class="ph ph-arrow-circle-up"></i>
+            </div>
+            <h3 id="display-saida">0,00</h3>
+        </div>
+
+        <div class="card total" id="total">
+            <div class="card-header">
+                <span>Total</span>
+                <i class="ph ph-arrow-circle-up"></i>
+            </div>
+            <h3 id="display-total">0,00</h3>
+        </div>
+
+    </section>
+
+    <main class="container">
+        <section class="nova-transacao">
+            <h2>Nova Transação</h2>
+            <form id="nova-transacao">
+                <div class="inputs">
+                    <div class="input-group">
+                        <input type="text" id="descricao" placeholder="Ex: Aluguel, Salário..." required>
+                        <label for="descricao">Descrição</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="valor" placeholder="0,00" required>
+                        <label for="valor">Valor</label>
+                    </div>
+                </div>
+
+                <div class="add-valor">
+                    <h3>Tipo: </h3>
+
+                    <div class="radio-group">
+                        <input type="radio" name="tipo" id="entrada" value="entrada" checked>
+                        <label for="entrada">Entrada</label>
+
+                        <input type="radio" name="tipo" id="saida" value="saida">
+                        <label for="saida">Saida</label>
+                    </div>
+                    <div class="div-button">
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="historico">
+            <h2>Histórico</h2>
+
+            <div class="historico-header">
+                <span>Descrição</span>
+                <span>Valor</span>
+                <span>Tipo</span>
+            </div>
+            <ul class="lista-transacoes">
+                <li class="transacao">
+                    <span>aluguel</span>
+                    <span>1200,00</span>
+                    <span>saida</span>
+                </li>
+                <li class="transacao">
+                    <span>aluguel</span>
+                    <span>1200,00</span>
+                    <span>saida</span>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+    
+    </footer>
+</body>
+</html>

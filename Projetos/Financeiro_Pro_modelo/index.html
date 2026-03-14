@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./js/main.js" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="ph ph-wallet"></i>
+            <h1>Financeiro Pro</h1>
+        </div>
+        <div class="cotacao-box">
+            <span>USD: <strong id="dolar-valor">...</strong></span>
+        </div>
+    </header>
+
+    <section id="dashboard">
+        <div class="card entrada">
+            <div class="card-header">
+                <span>Entradas</span>
+                <i class="ph ph-arrow-circle-up"></i>
+            </div>
+            <h3 id="display-entradas">R$ 0,00</h3>
+        </div>
+
+        <div class="card saida">
+            <div class="card-header">
+                <span>Saídas</span>
+                <i class="ph ph-arrow-circle-down"></i>
+            </div>
+            <h3 id="display-saidas">R$ 0,00</h3>
+        </div>
+
+        <div class="card total">
+            <div class="card-header">
+                <span>Total</span>
+                <i class="ph ph-currency-dollar"></i>
+            </div>
+            <h3 id="display-total">R$ 0,00</h3>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="nova-transacao">
+            <h2>Nova Transação</h2>
+            <form id="form-transacao">
+                <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Ex: Aluguel, Salário..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="valor">Valor (R$)</label>
+                    <input type="number" id="valor" step="0.01" placeholder="0,00" required>
+                </div>
+
+                <div class="input-group-radio">
+                    <label>Tipo:</label>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="tipo" value="entrada" checked>
+                            <span class="bubble entrada">Entrada</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tipo" value="saida">
+                            <span class="bubble saida">Saída</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="historico">
+            <h2>Histórico</h2>
+            <div class="lista-cabecalho">
+                <span>Descrição</span>
+                <span>Valor</span>
+                <span>Ação</span>
+            </div>
+            
+            <ul id="lista-transacoes">
+                </ul>
+        </section>
+
+    </main>
+</body>
+</html>
